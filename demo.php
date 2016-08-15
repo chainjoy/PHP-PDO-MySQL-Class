@@ -39,7 +39,7 @@
 	define('DBUser', 'root'); 
 	define('DBPassword', ''); 
 	require(dirname(__FILE__)."/src/PDO.class.php");
-	$DB = new Db(DBHost, DBName, DBUser, DBPassword); 
+	$DB = Db::getInstance();
 ?&gt;
 			</code>
 		</pre>
@@ -56,7 +56,7 @@ define('DBName', 'Database');
 define('DBUser', 'root'); 
 define('DBPassword', ''); 
 require(dirname(__FILE__)."/src/PDO.class.php");
-$DB = new Db(DBHost, DBName, DBUser, DBPassword); 
+$DB = Db::getInstance();
 ?>
 		<h2>
 			Preventing SQL Injection Attacks
@@ -318,7 +318,7 @@ ID for array("color"=>"yellow","name"=>"mango","id"=>null):
 		<pre>
 			<code class="lang-php">
 <?php
-	echo $DB->querycount;
+	echo $DB->queryCount();
 ?> SQL Queries in this page.
 			</code>
 		</pre>
